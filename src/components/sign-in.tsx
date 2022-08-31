@@ -5,7 +5,10 @@ const endPoint = process.env.REACT_APP_BASE_URL + "/auth/sign-in";
 const SignIn = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
-    const data = {};
+    const data = {
+      email: "code.2307sabia@gmail.com",
+      password: "password",
+    };
     axios.post(endPoint, data);
   };
   return (
