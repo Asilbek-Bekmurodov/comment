@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Mode } from "../App";
+import { Mode } from "../app";
 import UserData from "./user-data";
 
 interface ContentProps {

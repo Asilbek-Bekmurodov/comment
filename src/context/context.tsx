@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Mode, Profile } from "../App";
+import { Mode, Profile } from "../app";
 
 export const SuperContext = createContext<{
   mode: Mode;
