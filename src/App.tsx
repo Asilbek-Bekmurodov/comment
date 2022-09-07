@@ -1,7 +1,7 @@
 import { Component } from "react";
 import NavBar from "./components/navbar";
 import Content from "./components/content";
-import { SuperContext } from "./context/context";
+import { IContextValue, SuperContext } from "./context/context";
 
 export type Mode = "dark" | "light";
 export interface Profile {
@@ -11,28 +11,37 @@ export interface Profile {
 
 interface AppState {
   profile: Profile;
-  mode: Mode;
 }
 
-class App extends Component<any, AppState> {
+interface AppProps {
+  mode: Mode;
+  onChangeMode: (mode: Mode) => void;
+}
+
+class App extends Component<AppProps, AppState> {
   state = {
     profile: {
       username: "arslonbekXX",
       email: "ars@domain.com",
     },
-    mode: "dark",
   } as AppState;
 
-  handleChangeMode = (mode: Mode) => {
-    this.setState({ mode });
-  };
+  componentDidUpdate(prevProps: AppProps, prevState: AppState) {
+    if (prevProps.mode !== this.props.mode) {
+      console.log(`change mode for ${this.props.mode}`);
+    }
+  }
 
   render() {
+    const value: IContextValue = {
+      ...this.state,
+      ...this.props,
+    };
+
     return (
-      <SuperContext.Provider
-        value={{ ...this.state, onChangeMode: this.handleChangeMode }}>
+      <SuperContext.Provider value={value}>
         <NavBar />
-        <Content onChangeMode={this.handleChangeMode} />
+        <Content onChangeMode={this.props.onChangeMode} />
       </SuperContext.Provider>
     );
   }

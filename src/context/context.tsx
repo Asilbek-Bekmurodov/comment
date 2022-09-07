@@ -1,8 +1,10 @@
 import { createContext } from "react";
 import { Mode, Profile } from "../app";
 
-export const SuperContext = createContext<{
+export interface IContextValue {
   mode: Mode;
   profile: Profile;
   onChangeMode: (mode: Mode) => void;
-}>(null as any);
+}
+
+export const SuperContext = createContext<IContextValue>(null as any);

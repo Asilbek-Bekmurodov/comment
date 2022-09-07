@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext, useRef, useState } from "react";
 import { SuperContext } from "../context/context";
 
 const logo = (
@@ -20,46 +20,64 @@ const logo = (
 );
 
 const NavBar: FC = () => {
+  const [person, setPerson] = useState({ name: "arslonbek", age: 20 });
+  const [count, setCount] = useState(7);
+  const { mode, onChangeMode } = useContext(SuperContext);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleChangeName = async () => {
+    setPerson((prev) => ({ ...prev, name: "Safar" }));
+    console.log("person = ", person);
+  };
+
+  const textMode = mode === "dark" ? "light" : "dark";
+
   return (
-    <SuperContext.Consumer>
-      {({ mode, profile, onChangeMode }) => {
-        const textMode = mode === "dark" ? "light" : "dark";
-        return (
-          <nav className={`navbar bg-${mode} text-${textMode}`}>
-            <div className='container d-flex justify-content-between'>
-              <a className={`navbar-brand text-${textMode}`} href='##'>
-                {logo}
-                CodingBat
-              </a>
-              <div className='dropdown'>
-                <span
-                  style={{ cursor: "pointer" }}
-                  data-bs-toggle='dropdown'
-                  aria-expanded='false'>
-                  {profile.username}
-                </span>
-                <ul className='dropdown-menu'>
-                  <li>
-                    <button
-                      className='dropdown-item'
-                      onClick={() => onChangeMode("dark")}>
-                      Dark Mode
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className='dropdown-item'
-                      onClick={() => onChangeMode("light")}>
-                      Light Mode
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        );
-      }}
-    </SuperContext.Consumer>
+    <nav className={`navbar bg-${mode} text-${textMode}`}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(`username = ${inputRef.current?.value}`);
+        }}>
+        <input placeholder='username' type='text' ref={inputRef} />
+        <button>Submit</button>
+      </form>
+      <div className='container d-flex justify-content-between'>
+        <a className={`navbar-brand text-${textMode}`} href='##'>
+          {logo}
+          CodingBat
+        </a>
+        <div className='dropdown'>
+          <span
+            style={{ cursor: "pointer" }}
+            data-bs-toggle='dropdown'
+            aria-expanded='false'>
+            {person.name}
+          </span>
+          <ul className='dropdown-menu'>
+            <li>
+              <button
+                className='dropdown-item'
+                onClick={() => onChangeMode("dark")}>
+                Dark Mode
+              </button>
+            </li>
+            <li>
+              <button
+                className='dropdown-item'
+                onClick={() => onChangeMode("light")}>
+                Light Mode
+              </button>
+            </li>
+            <li>
+              <button className='dropdown-item' onClick={handleChangeName}>
+                Change Name
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
