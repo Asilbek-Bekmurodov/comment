@@ -1,9 +1,16 @@
-# ---------- 07.10.22 ----------(153)
+# ---------- 08.10.22 ----------(154)
 
 ## 1️⃣ Checking homeworks
 
-## 2️⃣ CodingBat add new end-points
+## 2️⃣ useState
 
-## 3️⃣ Using Context API
+         ✅ Greeting app
+              🟣 without initial name
+              🟣 with initial name
 
-         ✅ Create multiple provides
+## 3️⃣ useEffect & useState
+
+         ✅ update localstorage
+         ✅ lazy state initialization
+         ✅ effect dependencies
+         ✅ custom hook

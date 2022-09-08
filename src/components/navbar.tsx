@@ -1,4 +1,4 @@
-import { FC, useContext, useRef, useState } from "react";
+import { FC, useContext, useRef, useState, useEffect } from "react";
 import { SuperContext } from "../context/context";
 
 const logo = (
@@ -21,7 +21,6 @@ const logo = (
 
 const NavBar: FC = () => {
   const [person, setPerson] = useState({ name: "arslonbek", age: 20 });
-  const [count, setCount] = useState(7);
   const { mode, onChangeMode } = useContext(SuperContext);
   const inputRef = useRef<HTMLInputElement>(null);
 
