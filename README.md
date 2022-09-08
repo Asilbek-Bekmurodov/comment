@@ -5,12 +5,12 @@
 ## 2️⃣ useState
 
          ✅ Greeting app
-              🟣 without initial name
-              🟣 with initial name
+              🟣 without initial name 👍🏻
+              🟣 with initial name 👍🏻
 
 ## 3️⃣ useEffect & useState
 
-         ✅ update localstorage
+         ✅ update localstorage 👍🏻
          ✅ lazy state initialization
-         ✅ effect dependencies
+         ✅ effect dependencies 👍🏻
          ✅ custom hook
