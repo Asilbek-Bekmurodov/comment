@@ -19,12 +19,12 @@ interface AppProps {
 }
 
 class App extends Component<AppProps, AppState> {
-  state = {
+  state: AppState = {
     profile: {
       username: "arslonbekXX",
       email: "ars@domain.com",
     },
-  } as AppState;
+  };
 
   componentDidUpdate(prevProps: AppProps, prevState: AppState) {
     if (prevProps.mode !== this.props.mode) {

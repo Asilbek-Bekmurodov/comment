@@ -1,16 +1,9 @@
-# ---------- 08.10.22 ----------(154)
+# ---------- 12.10.22 ----------(155)
 
 ## 1️⃣ Checking homeworks
 
-## 2️⃣ useState
+## 2️⃣ create Tic-Tac-Toe
 
-         ✅ Greeting app
-              🟣 without initial name 👍🏻
-              🟣 with initial name 👍🏻
+         ✅ use custom hook
 
-## 3️⃣ useEffect & useState
-
-         ✅ update localstorage 👍🏻
-         ✅ lazy state initialization
-         ✅ effect dependencies 👍🏻
-         ✅ custom hook
+## 3️⃣ useEffect & useState practices
