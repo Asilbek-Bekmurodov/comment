@@ -1,6 +1,6 @@
-# ---------- 12.10.22 ----------(155)
+# ---------- 14.10.22 ----------(157)
 
-## 1️⃣ Checking homeworks
+## 1️⃣ Checking Homework
 
 ## 2️⃣ create Tic-Tac-Toe
 
