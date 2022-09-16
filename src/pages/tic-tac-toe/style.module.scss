@@ -1,0 +1,56 @@
+* {
+  font: 14px Century Gothic, Futura, sans-serif;
+  user-select: none;
+}
+
+.game {
+  margin: 20px;
+  min-height: 260px;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+
+  &-board {
+    display: block;
+
+    > button {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  }
+
+  &-info {
+    margin-left: 20px;
+    min-width: 190px;
+  }
+}
+
+.squares {
+  display: grid;
+  grid-template-columns: repeat(3, 34px);
+  grid-template-rows: repeat(3, 34px);
+  background-color: #999;
+  gap: 1px;
+  padding: 1px;
+}
+.square {
+  background: #fff;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  padding: 0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+
+  &:focus {
+    background: #ddd;
+    outline: none;
+  }
+
+  &:disabled {
+    color: #000;
+  }
+}

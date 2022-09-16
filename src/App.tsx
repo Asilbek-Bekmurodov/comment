@@ -14,8 +14,8 @@ interface AppState {
 }
 
 interface AppProps {
-  // mode: Mode;
-  // onChangeMode: (mode: Mode) => void;
+  mode: Mode;
+  onChangeMode: (mode: Mode) => void;
 }
 
 class App extends Component<AppProps, AppState> {
