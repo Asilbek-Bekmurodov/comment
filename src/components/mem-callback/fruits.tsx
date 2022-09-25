@@ -15,25 +15,32 @@ export interface Fruit {
 }
 export interface FruitsProps {
   fruits: Fruit[];
+  onDelete: (idx: number, nextWord?: string) => void;
 }
 
-const Fruits: React.FC<FruitsProps> = ({ fruits }) => (
-  <ol
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      gap: 16,
-    }}>
-    {fruits.map((fruit, idx) => (
-      <li key={idx}>
-        {fruit.name}
-        <button onClick={() => console.log(fruit)}>
-          show fruit {fruit.icon}
-        </button>
-      </li>
-    ))}
-  </ol>
-);
+const Fruits: React.FC<FruitsProps> = ({ fruits, onDelete }) => {
+  console.log("fruits calling...");
+  return (
+    <ol
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        gap: 16,
+      }}>
+      {fruits.map((fruit, idx) => (
+        <li key={idx}>
+          {fruit.icon}-{fruit.name}
+          <button
+            onClick={() => {
+              onDelete(idx);
+            }}>
+            Delete
+          </button>
+        </li>
+      ))}
+    </ol>
+  );
+};
 
 export default Fruits;

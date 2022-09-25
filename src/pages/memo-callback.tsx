@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Counter from "components/mem-callback/counter";
-import Fruits, { Fruit } from "components/mem-callback/fruits";
+import Fruits, { Fruit, FruitsProps } from "components/mem-callback/fruits";
 
 interface MemoCallbackProps {}
 
@@ -45,17 +45,15 @@ const MemoCallback: React.FC<MemoCallbackProps> = () => {
     console.log(`use Effect`);
   }, [fruits]);
 
+  const onDelete: FruitsProps["onDelete"] = (idx, nextWord) => {
+    console.log("delete fruit idx: " + idx);
+  };
+
   return (
     <div>
       <h1>Fruits</h1>
-      <Fruits fruits={fruits} />
-      <Counter
-        count={count}
-        onIncrement={() => {
-          fruits.pop();
-          setCount((c) => c + 1);
-        }}
-      />
+      <Fruits onDelete={onDelete} fruits={fruits} />
+      <Counter count={count} onIncrement={() => setCount((c) => c + 1)} />
     </div>
   );
 };

@@ -14,6 +14,7 @@ const Home: React.FC<HomeProps> = () => {
         alignItems: "center",
         gap: 16,
       }}>
+      <button onClick={() => navigate("/shunchaki")}>Shunchaki</button>
       <button onClick={() => navigate("/ref-state")}>Ref & State</button>
       <button onClick={() => navigate("/memo-callback")}>
         Memo & Callback
