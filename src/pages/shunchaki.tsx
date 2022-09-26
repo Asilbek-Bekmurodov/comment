@@ -1,6 +1,6 @@
 import Fruits from "components/shunchaki/fruits";
 import Tub from "components/shunchaki/tub";
-import { useEffect, useCallback, useState, useRef, FC } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 
 interface ShunchakiProps {}
 

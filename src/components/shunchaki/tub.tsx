@@ -12,7 +12,7 @@ function findTubs(start: number, count: number) {
 
   for (let i = start; ; i++) {
     let isTub = true;
-    for (let j = 2; j < i - 1; j++) {
+    for (let j = 2; j < i ** 0.5; j++) {
       if (i % j === 0) {
         isTub = false;
         break;
@@ -27,6 +27,7 @@ function findTubs(start: number, count: number) {
 
   return tubs;
 }
+
 const Tub: React.FC<TubProps> = ({ start, count, render }) => {
   const tubs: number[] = findTubs(start, count);
 
@@ -40,4 +41,4 @@ const Tub: React.FC<TubProps> = ({ start, count, render }) => {
   );
 };
 
-export default React.memo(Tub);
+export default React.memo(Tub); // pure component
