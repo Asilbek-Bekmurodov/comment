@@ -12,6 +12,8 @@
 
 ## 6️⃣ prop Drilling && component composition
 
+## 7️⃣ using example react-hook-form
+
 ---------- Learned techs ----------
 ✅ FruitsProps["onDelete"] => DRY
 ✅ CSSProperties => React
