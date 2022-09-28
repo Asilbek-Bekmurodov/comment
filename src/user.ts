@@ -5,7 +5,7 @@ export interface User {
   job: "teacher" | "developer";
 }
 
-const users = {
+const users: Record<"123" | "124" | "125", User> = {
   123: {
     id: "123",
     phone: "xxxxxxx",
@@ -18,8 +18,17 @@ const users = {
     fullName: "arslonbek 124",
     job: "developer",
   },
+  125: {
+    id: "125",
+    phone: "xxxxxxx",
+    fullName: "arslonbek 125",
+    job: "developer",
+  },
 };
 
-export function getUser(userID: string): User {
+export function getUser(userID: keyof typeof users): User {
   return { ...users[userID] };
 }
+
+
+getUser("")
