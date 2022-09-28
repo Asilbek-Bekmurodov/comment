@@ -1,10 +1,8 @@
 import Fruits from "components/shunchaki/fruits";
-import Tub from "components/shunchaki/tub";
+import Tubs from "components/shunchaki/tub-class";
 import { useEffect, useCallback, useState, useRef } from "react";
 
 interface ShunchakiProps {}
-
-const render = (tub: number) => <li key={tub}>{tub}</li>;
 
 const Shunchaki: React.FC<ShunchakiProps> = () => {
   const [count, setCount] = useState(0);
@@ -16,6 +14,7 @@ const Shunchaki: React.FC<ShunchakiProps> = () => {
     console.log("use effect calling...");
   }, [initFruits]);
 
+  const render = (tub: number) => <li key={tub}>{tub}</li>;
   const onDelete = useCallback(
     (fruitName: string) => {
       const newFruits = fruits.filter((fruit) => fruit !== fruitName);
@@ -27,7 +26,7 @@ const Shunchaki: React.FC<ShunchakiProps> = () => {
   return (
     <div>
       <Fruits fruits={fruits} onDelete={onDelete} />
-      <Tub render={render} start={20} count={3000} />
+      <Tubs render={render} start={20} count={1000} />
       <button onClick={() => setCount((c) => c + 1)}>Count {count}</button>
     </div>
   );

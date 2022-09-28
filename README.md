@@ -6,11 +6,11 @@
 
 ## 3️⃣ React.memo ✅
 
-## 4️⃣ shouldComponentUpdate && PureComponent
+## 4️⃣ shouldComponentUpdate && PureComponent ✅
 
 ## 5️⃣ context && useContext
 
-## 6️⃣ prop Drilling && component composition
+## 6️⃣ prop Drilling && component composition ✅
 
 ## 7️⃣ using example react-hook-form
 

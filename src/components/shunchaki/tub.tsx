@@ -6,7 +6,7 @@ interface TubProps {
   render: (tub: number) => JSX.Element;
 }
 
-function findTubs(start: number, count: number) {
+export function findTubs(start: number, count: number) {
   console.log("finTubs calling...");
   const tubs: number[] = [];
 
