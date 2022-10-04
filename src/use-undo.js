@@ -1,51 +1,56 @@
 import React from "react";
 
+// action = { type: "", payload:  }
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "UNDO": {
+      const previous = state.past[state.past.length - 1];
+      const newPast = state.past.slice(0, state.past.length - 1);
+
+      return {
+        past: newPast,
+        present: previous,
+        future: [state.present, ...state.future],
+      };
+    }
+    case "REDO": {
+      const next = state.future[0];
+      const newFuture = state.future.slice(1);
+
+      return {
+        past: [...state.past, state.present],
+        present: next,
+        future: newFuture,
+      };
+    }
+    case "SET": {
+      return {
+        past: [...state.past, state.present],
+        present: action.payload,
+        future: [],
+      };
+    }
+    case "RESET":
+      return { past: [], present: [], future: [] };
+
+    default:
+  }
+};
+
 export function useUndo(initialPresent) {
-  const [past, setPast] = React.useState([]);
-  const [present, setPresent] = React.useState(initialPresent);
-  const [future, setFuture] = React.useState([]);
+  const [state, setState] = React.useState({
+    present: initialPresent,
+    past: [],
+    future: [],
+  });
 
-  const canUndo = past.length !== 0;
-  const canRedo = future.length !== 0;
+  const dispatch = (action) => setState(reducer(state, action));
 
-  const undo = () => {
-    if (!canUndo) return;
+  const canUndo = state.past.length !== 0;
+  const canRedo = state.future.length !== 0;
+  const canReset = Boolean(
+    state.future.length || state.present.length || state.past.length
+  );
 
-    const previous = past[past.length - 1];
-    const newPast = past.slice(0, past.length - 1);
-
-    setPast(newPast);
-    setPresent(previous);
-    setFuture([present, ...future]);
-  };
-
-  const redo = () => {
-    if (!canRedo) return;
-
-    const next = future[0];
-    const newFuture = future.slice(1);
-
-    setPast([...past, present]);
-    setPresent(next);
-    setFuture(newFuture);
-  };
-
-  const set = (newPresent) => {
-    if (newPresent === present) return;
-
-    setPast([...past, present]);
-    setPresent(newPresent);
-    setFuture([]);
-  };
-
-  const reset = (newPresent) => {
-    setPast([]);
-    setPresent(newPresent);
-    setFuture([]);
-  };
-
-  return [
-    { past, present, future },
-    { set, reset, undo, redo, canUndo, canRedo },
-  ];
+  return [state, { dispatch, canUndo, canRedo, canReset }];
 }
