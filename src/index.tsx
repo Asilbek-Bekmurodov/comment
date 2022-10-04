@@ -7,14 +7,8 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const data = { past: [1], present: [2], future: [3] };
-
 root.render(
   <BrowserRouter>
-    <pre>{JSON.stringify(data)}</pre>
-    <button>Increment</button>
-    <button>Undo</button>
-    <button>Redo</button>
-    <button>Reset</button>
+    <App />
   </BrowserRouter>
 );
