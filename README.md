@@ -1,9 +1,9 @@
-# ---------- 5.10.22 ----------(174)
+# ---------- 6.10.22 ----------(175)
 
-## 1️⃣ React.useReducer
+## 1️⃣ What is Redux
 
-## 2️⃣ Create React.useState with React.useReducer
+## 2️⃣
 
-## 3️⃣ Explain with undo/redo 👍🏻
+## 3️⃣
 
-## 4️⃣ Practice with React.useReducer
+## 4️⃣
