@@ -1,4 +1,5 @@
-import App from "app";
+import StateCounter from "state-counter";
+import ReducerCounter from "reducer-counter";
 import ReactDOM from "react-dom/client";
 
 import { BrowserRouter } from "react-router-dom";
@@ -9,6 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <BrowserRouter>
-    <App />
+    <StateCounter />
+    <ReducerCounter />
   </BrowserRouter>
 );

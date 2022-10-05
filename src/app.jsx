@@ -3,17 +3,12 @@ import { useUndo } from "use-undo";
 
 let counter = 1;
 const App = () => {
-  const [state, { dispatch, canReset, canUndo, canRedo }] = useUndo(
-    `Lesson-${counter}`
-  );
+  const [state, { dispatch, canReset, canUndo, canRedo }] = useUndo(1);
 
   return (
     <>
       <pre>{JSON.stringify(state)}</pre>
-      <button
-        onClick={() =>
-          dispatch({ type: "SET", payload: `Lesson-${++counter}` })
-        }>
+      <button onClick={() => dispatch({ type: "SET", payload: ++counter })}>
         Increment
       </button>
       <button disabled={!canUndo} onClick={() => dispatch({ type: "UNDO" })}>

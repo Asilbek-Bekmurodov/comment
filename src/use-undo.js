@@ -1,6 +1,5 @@
 import React from "react";
 
-// action = { type: "", payload:  }
 const reducer = (state, action) => {
   switch (action.type) {
     case "UNDO": {
@@ -32,19 +31,16 @@ const reducer = (state, action) => {
     }
     case "RESET":
       return { past: [], present: [], future: [] };
-
     default:
   }
 };
 
 export function useUndo(initialPresent) {
-  const [state, setState] = React.useState({
-    present: initialPresent,
+  const [state, dispatch] = React.useReducer(reducer, {
     past: [],
+    present: initialPresent,
     future: [],
   });
-
-  const dispatch = (action) => setState(reducer(state, action));
 
   const canUndo = state.past.length !== 0;
   const canRedo = state.future.length !== 0;
