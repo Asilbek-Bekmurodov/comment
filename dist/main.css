@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #efed40;
+}
+
+* {
+  font-family: Monograf;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container form {
+  display: flex;
+  gap: 1rem;
+  font-size: 20px;
+}
+
+.container .todos {
+  padding: 0;
+  margin: 0;
+}
+.container .todos li button {
+  margin-left: 5px;
+}

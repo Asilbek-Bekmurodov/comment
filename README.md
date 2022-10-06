@@ -18,24 +18,24 @@
 
 ## 4️⃣ Functional programming
 
-        ✅ First-class Function
+        ✅ First-class Function 👍🏻
              🔴 https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
 
-        ✅ Higher Order Function
+        ✅ Higher Order Function 👍🏻
              🔴 https://www.youtube.com/watch?v=BMUiFMZr7vk
              🔴 https://www.youtube.com/watch?v=H4awPsyugS0
              🔴 https://eloquentjavascript.net/05_higher_order.html
 
-        ✅ Function Composition
+        ✅ Function Composition 👍🏻
              🔴 https://www.educative.io/answers/function-composition-in-javascript
 
-        ✅ Composing and Piping (with lodash)
-        ✅ Currying
-        ✅ Pure function
-        ✅ Immutability
-        ✅ Update Object
-        ✅ Update Array
-        ✅ Using immer js
+        ✅ Composing and Piping (with lodash) 👍🏻
+        ✅ Currying 👍🏻
+        ✅ Pure function 👍🏻
+        ✅ Immutability 👍🏻
+        ✅ Update Object 👍🏻
+        ✅ Update Array 👍🏻
+        ✅ Using immer js 👍🏻
 
 ## 6️⃣ Fundamental of Redux
 
@@ -47,11 +47,11 @@
 
         ✅ First Redux Application
              🔴 Steps
-                🫰 Design the store
-                🫰 Define the actions
-                🫰 Create a reducer
+                🫰 Design the store 👍🏻
+                🫰 Define the actions 👍🏻
+                🫰 Create a reducer 👍🏻
                 🫰 Set up the store
-             🔴 Create a reducer
+             🔴 Create a reducer 👍🏻
              🔴 Create a store
              🔴 Dispatching actions
              🔴 Subscribe to store
