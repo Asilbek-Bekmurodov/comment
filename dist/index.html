@@ -2,19 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redux Starter Project</title>
-    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./practice.css" />
   </head>
-
   <body>
-    <div class="container">
-      <form id="todo_form">
-        <input type="text" id="todo_input" />
-        <button>Add</button>
-      </form>
-      <ol class="todos"></ol>
+    <div id="root">
+      <div>
+        <div class="row">
+          <button class="btn">-</button>
+          <span class="value">0</span>
+          <button class="btn">+</button>
+        </div>
+        <div class="row">
+          <input class="textbox" value="2" />
+          <button class="btn">Add Amount</button>
+          <button class="asyncBtn btn">Add Async</button>
+          <button class="btn">Add If Odd</button>
+        </div>
+      </div>
     </div>
-    <script src="app.js"></script>
   </body>
+  <script src="app.js"></script>
 </html>

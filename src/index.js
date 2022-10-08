@@ -1,5 +1,6 @@
 import store from "./store";
 import { addTodo, editTodo, deleteTodo, toggleTodo } from "./actions";
+import { generate } from "shortid";
 
 const todoForm = document.getElementById("todo_form");
 const todoInput = document.getElementById("todo_input");
@@ -9,7 +10,7 @@ todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const description = todoInput.value;
-  store.dispatch(addTodo({ description }));
+  store.dispatch(addTodo({ description, id: generate() }));
   renderTodo();
   todoInput.value = "";
 });
@@ -35,7 +36,7 @@ function renderTodo() {
     } else {
       span.contentEditable = false;
       editBtn.innerText = "Edit";
-      store.dispatch(editTodo({ description: todo.description, id: todo.id }));
+      store.dispatch(editTodo({ description: span.innerText, id: todo.id }));
     }
   });
 
