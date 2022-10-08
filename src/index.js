@@ -1,5 +1,5 @@
-import { generate } from "shortid";
 import store from "./store";
+import { addTodo, editTodo, deleteTodo, toggleTodo } from "./actions";
 
 const todoForm = document.getElementById("todo_form");
 const todoInput = document.getElementById("todo_input");
@@ -9,7 +9,7 @@ todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const description = todoInput.value;
-  store.dispatch({ type: "addTodo", payload: { description, id: generate() } });
+  store.dispatch(addTodo({ description }));
   renderTodo();
   todoInput.value = "";
 });
@@ -20,18 +20,35 @@ function renderTodo() {
   const todo = todos[todos.length - 1];
 
   const li = document.createElement("li");
-  li.innerText = todo.description;
+  const span = document.createElement("span");
+  span.innerText = todo.description;
 
   const deleteBtn = createBtn("Delete", () => {
-    store.dispatch({ type: "deleteTodo", payload: todo.id });
+    store.dispatch(deleteTodo({ id: todo.id }));
     li.remove();
   });
 
-  const toggleBtn = createBtn("Toggle", () => {
-    console.log(`todo = ${todo.id}`);
+  const editBtn = createBtn("Edit", () => {
+    if (editBtn.innerText === "Edit") {
+      span.contentEditable = true;
+      editBtn.innerText = "Done";
+    } else {
+      span.contentEditable = false;
+      editBtn.innerText = "Edit";
+      store.dispatch(editTodo({ description: todo.description, id: todo.id }));
+    }
   });
 
-  li.append(deleteBtn, toggleBtn);
+  const toggleBtn = createBtn("Toggle", () => {
+    store.dispatch(toggleTodo({ id: todo.id }));
+    editBtn.disabled = todo.isCompleted;
+    span.style.setProperty(
+      "text-decoration",
+      todo.isCompleted ? "line-through" : "none"
+    );
+  });
+
+  li.append(span, deleteBtn, editBtn, toggleBtn);
   todosElm.appendChild(li);
 }
 
@@ -41,3 +58,7 @@ function createBtn(text, callback) {
   btn.addEventListener("click", callback);
   return btn;
 }
+
+store.subscribe(() => {
+  console.log("store = ", store.getState());
+});

@@ -14,15 +14,15 @@
 ## 2️⃣ Fundamental of Redux
 
         ✅ First Redux Application
-             🔴 Action types
-             🔴 Action creators
-             🔴 Implement todo toggle
+             🔴 Action types 👍🏻
+             🔴 Action creators 👍🏻
+             🔴 Implement todo toggle 👍🏻
 
 ## 3️⃣ Building Redux scratch
 
-        ✅ Private properties
-        ✅ Dispatching actions
-        ✅ Subscribing to the store
+        ✅ Private properties -> createStore 👍🏻
+        ✅ Dispatching actions -> dispatch() 👍🏻
+        ✅ Subscribing to the store -> subscribe() 👍🏻
 
 ## 4️⃣ Debugging Redux apps
 

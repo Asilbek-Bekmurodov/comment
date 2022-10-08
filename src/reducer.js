@@ -1,28 +1,39 @@
-const state = {
-  todos: [{ id: "1", description: "todo desc", isCompleted: false }],
-};
 import { generate } from "shortid";
+import * as actionsTypes from "./action-types";
 
-export default function reducer(state, action) {
-  switch (action.type) {
-    case "addTodo": {
+export default function reducer(state = { todos: [] }, { payload = {}, type }) {
+  switch (type) {
+    case actionsTypes.ADD_TODO: {
       const todo = {
-        id: action.payload.id,
-        description: action.payload.description,
+        id: payload.id,
+        description: payload.description,
         isCompleted: false,
       };
       const todos = state ? [...state.todos, todo] : [todo];
       return { todos };
     }
 
-    case "deleteTodo": {
+    case actionsTypes.DELETE_TODO: {
       const todos = [...state.todos];
-      const deleteIdx = todos.findIndex((todo) => todo.id === action.payload); // {type: "deleteTodo", payload: 0}
+      const deleteIdx = todos.findIndex((todo) => todo.id === payload.id);
       todos.splice(deleteIdx, 1);
       return { todos };
     }
-    case "toggleTodo":
-      break;
+
+    case actionsTypes.TOGGLE_TODO: {
+      const todos = [...state.todos];
+      const toggleIdx = todos.findIndex((todo) => todo.id === payload.id);
+      todos[toggleIdx].isCompleted = !todos[toggleIdx].isCompleted;
+      return { todos };
+    }
+
+    case actionsTypes.EDIT_TODO: {
+      const todos = [...state.todos];
+      const editIdx = todos.findIndex((todo) => todo.id === payload.id);
+      todos[editIdx].description = payload.description;
+      return { todos };
+    }
+
     default:
       return state;
   }
