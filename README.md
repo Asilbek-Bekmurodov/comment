@@ -30,8 +30,6 @@
         ✅ The basics
         ✅ Exporting and importing store
 
-## 4️⃣ Redux practice (Tic-tac-toe)
+## 4️⃣ Redux practice (Counter)
 
-        ✅ Tic-tac-toe -> https://bit.ly/3Vdbj8H
-
-## [JavaScript Concepts](https://github.com/leonardomso/33-js-concepts)
+## 5️⃣ Redux homework (https://bit.ly/3Vdbj8H)
