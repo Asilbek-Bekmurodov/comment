@@ -1,5 +1,5 @@
 import store from "./store";
-import { addTodo, editTodo, deleteTodo, toggleTodo } from "./actions";
+import { addTodo, editTodo, deleteTodo, toggleTodo } from "./todo";
 import { generate } from "shortid";
 
 const todoForm = document.getElementById("todo_form");

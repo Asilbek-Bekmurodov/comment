@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/todo-toolkit/index.js",
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "dist"),
@@ -9,6 +9,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 3000,
+    filename: "counter.html",
   },
   mode: "development",
 };

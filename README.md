@@ -13,11 +13,18 @@
 
 ## 2️⃣ Writing Clean code
 
-        ✅ Ducks pattern
-        ✅ Configure store
-        ✅ Redux-toolkit (yarn add @reduxjs/toolkit)
-        ✅ Create actions
+        ✅ Ducks pattern 👍🏻
+        ✅ Configure store 👍🏻
+        ✅ Redux-toolkit (yarn add @reduxjs/toolkit) 👍🏻
+        ✅ Create actions 👍🏻
         ✅ Create reducers
         ✅ Create slices
 
 ## 3️⃣ Redux homework (https://bit.ly/3Vdbj8H)
+
+state = {
+todos: [], // -> (action-creators, action-types,reducer)
+users: [],
+auth: {},
+cart: {}
+}

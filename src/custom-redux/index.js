@@ -1,7 +1,7 @@
 import { generate } from "shortid";
 
 import { createStore } from "redux";
-import reducer from "./reducer";
+import reducer from "../reducer";
 import { addTodo, toggleTodo } from "./actions";
 
 const store = createStore(
