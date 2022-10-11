@@ -88,8 +88,20 @@ const findComment = (videoID, commentID) => {
   return comment;
 };
 
-console.log(findComment("post2", "comment4"));
+// console.log(findComment("post2", "comment4"));
 
 const input = [1, 2, 3, 2, 3, 1, 2, 4, 3, 3, 6, 3, 2, 2, 3, 2, 1]; // 1 => 3, 2 => 6, 3 => 6, 4 => 1, 6 => 1
 const output = [2, 3, 1, 4, 6];
-function sortList(list) {}
+function sortList(list = []) {
+  const counters = {};
+
+  for (let idx = 0; idx < list.length; idx++) {
+    const key = list[idx];
+    counters[key] = counters[key] ? counters[key] + 1 : 1;
+  }
+
+  return counters;
+}
+
+const result = sortList(input);
+console.log("result = ", result);
