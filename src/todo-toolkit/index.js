@@ -10,9 +10,10 @@ todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const description = todoInput.value;
+  todoInput.value = "";
+
   store.dispatch(addTodo({ description, id: generate() }));
   renderTodo();
-  todoInput.value = "";
 });
 
 function renderTodo() {
@@ -42,10 +43,11 @@ function renderTodo() {
 
   const toggleBtn = createBtn("Toggle", () => {
     store.dispatch(toggleTodo({ id: todo.id }));
-    editBtn.disabled = todo.isCompleted;
+
+    editBtn.disabled = !editBtn.disabled;
     span.style.setProperty(
       "text-decoration",
-      todo.isCompleted ? "line-through" : "none"
+      editBtn.disabled ? "line-through" : "none"
     );
   });
 
