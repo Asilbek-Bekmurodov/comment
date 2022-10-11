@@ -21,10 +21,3 @@
         ✅ Create slices
 
 ## 3️⃣ Redux homework (https://bit.ly/3Vdbj8H)
-
-state = {
-todos: [], // -> (action-creators, action-types,reducer)
-users: [],
-auth: {},
-cart: {}
-}

@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/todo-toolkit/index.js",
+  entry: "./src/test.js",
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "dist"),
