@@ -1,4 +1,4 @@
-# ---------- 11.10.22 ----------(179)
+# ---------- 12.10.22 ----------(180)
 
 ## 1️⃣ Redux learning paths
 
@@ -6,8 +6,8 @@
         ✅ Fundamental of Redux 👍🏻
         ✅ Building redux from scratch 👍🏻
         ✅ Debugging (Redux dev tools) 👍🏻
-        ✅ Writing Clean code (Ducks pattern)
-        ✅ Redux store (Design for redux store)
+        ✅ Writing Clean code (Ducks pattern) 👍🏻
+        ✅ Redux store (Design for redux store) 👍🏻
         ✅ Middleware (Redux middleware)
         ✅ Calling APIs
 
