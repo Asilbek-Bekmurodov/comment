@@ -7,17 +7,18 @@
         ✅ Building redux from scratch 👍🏻
         ✅ Debugging (Redux dev tools) 👍🏻
         ✅ Writing Clean code (Ducks pattern) 👍🏻
-        ✅ Redux store (Design for redux store)
+        ✅ Redux store (Design for redux store) 👍🏻
         ✅ Middleware (Redux middleware)
         ✅ Calling APIs
+        ✅ Integration with React
 
 ## 2️⃣ Redux store (Design for redux store)
 
-        ✅ Combining Reducers
-        ✅ Normalization
-        ✅ Selectors
-        ✅ Memoizing Selectors with Reselect
-        ✅ Practice POST app
+        ✅ Combining Reducers 👍🏻
+        ✅ Normalization 👍🏻
+        ✅ Selectors 👍🏻
+        ✅ Memoizing Selectors with Reselect (https://github.com/reduxjs/reselect) 👍🏻
+        ✅ Practice POST app 👍🏻
 
 ## 3️⃣ Integration with React
 
