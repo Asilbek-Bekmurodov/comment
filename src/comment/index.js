@@ -21,12 +21,28 @@ function renderComment() {
 
   const todo = todos[todos.length - 1];
 
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  span.innerText = todo.description;
-
-  li.append(span, deleteBtn, editBtn, toggleBtn);
-  todosElm.appendChild(li);
+  commentBox.insertAdjacentHTML(
+    "afterbegin",
+    `
+    <div class="comment">
+    <div class="comment-top">
+      <img src=${"../src/assets/profile.png"} alt="" />
+      <h3 class="name">Maude Hall</h3>
+      <div class="date">14 min</div>
+    </div>
+    <p class="text">
+      ${todo.comment}
+    </p>
+    <div class="comment-footer">
+      <div class="wrapper">
+        <span>2 Likes</span>
+        <span> Reply</span>
+      </div>
+      <i class="fa-regular fa-thumbs-up"></i>
+    </div>
+    <div class="comment-wrapper"></div>
+</div>`
+  );
 }
 
 store.subscribe(() => {

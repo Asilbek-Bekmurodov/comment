@@ -12,6 +12,7 @@ body {
 .container {
   width: 570px;
   height: 988px;
+  overflow-y: scroll;
   background-color: #fff;
   border-radius: 8px;
 }
