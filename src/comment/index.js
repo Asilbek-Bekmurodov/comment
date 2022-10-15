@@ -22,7 +22,7 @@ function renderComment() {
   const oneComment = comments[comments.length - 1];
 
   commentBox.insertAdjacentHTML(
-    "beforebegin",
+    "afterbegin",
     `
     <div class="comment">
     <div class="comment-top">
