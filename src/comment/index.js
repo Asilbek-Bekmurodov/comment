@@ -1,5 +1,5 @@
 import store from "./config-store";
-import { addTodo } from "./todo";
+import { addComment } from "./comment";
 import { generate } from "shortid";
 
 const commentForm = document.getElementById("comment-form");
@@ -12,26 +12,26 @@ commentForm.addEventListener("submit", (e) => {
   const comment = commentInput.value;
   commentInput.value = "";
 
-  store.dispatch(addTodo({ comment, id: generate() }));
+  store.dispatch(addComment({ comment, id: generate() }));
   renderComment();
 });
 
 function renderComment() {
-  const { todos } = store.getState();
+  const { comments } = store.getState();
 
-  const todo = todos[todos.length - 1];
+  const oneComment = comments[comments.length - 1];
 
   commentBox.insertAdjacentHTML(
-    "afterbegin",
+    "beforebegin",
     `
     <div class="comment">
     <div class="comment-top">
-      <img src=${"../src/assets/profile.png"} alt="" />
+      <img class="profile-img" src="https://images.unsplash.com/flagged/photo-1571837360114-edf5dba7b1dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
       <h3 class="name">Maude Hall</h3>
       <div class="date">14 min</div>
     </div>
     <p class="text">
-      ${todo.comment}
+      ${oneComment.comment}
     </p>
     <div class="comment-footer">
       <div class="wrapper">

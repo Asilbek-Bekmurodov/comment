@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: "todo",
-  initialState: { todos: [] },
+  name: "comment",
+  initialState: { comments: [] },
   reducers: {
-    addTodo({ todos }, { payload }) {
-      todos.push({
+    addComment({ comments }, { payload }) {
+      comments.push({
         id: payload.id,
         comment: payload.comment,
       });
@@ -13,6 +13,6 @@ const slice = createSlice({
   },
 });
 
-export const { addTodo } = slice.actions;
+export const { addComment } = slice.actions;
 
 export default slice.reducer;

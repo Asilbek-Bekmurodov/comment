@@ -1,3 +1,10 @@
+* {
+  font-family: "SF Pro Display";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   display: grid;
@@ -5,16 +12,14 @@ body {
   background-color: #eaebef;
 }
 
-* {
-  font-family: "SF Pro Display";
-}
-
 .container {
+  position: relative;
   width: 570px;
-  height: 988px;
+  height: 90vh;
   overflow-y: scroll;
   background-color: #fff;
   border-radius: 8px;
+  padding: 0 25px 25px;
 }
 
 .container-top {
@@ -23,6 +28,9 @@ body {
   justify-content: space-between;
   padding: 26px 25px 5px;
   border-bottom: 1px solid gray;
+  position: sticky;
+  background-color: white;
+  top: -1px;
 }
 
 .title {
@@ -35,15 +43,18 @@ body {
   color: #000000;
 }
 
-.container {
-  padding: 0 25px 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
 .comment {
   padding: 0 25px 26px;
+  border: 1px solid gray;
+  margin: 10px 0;
+  border-radius: 16px;
 }
 
 .comment-top {
@@ -93,6 +104,8 @@ body {
 }
 
 .input-container {
+  position: sticky;
+  bottom: 10px;
   background: #ffffff;
   border: 1.89637px solid rgba(180, 187, 198, 0.5);
   border-radius: 8.84974px;
