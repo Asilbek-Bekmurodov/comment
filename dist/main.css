@@ -58,6 +58,7 @@ body {
 .comments {
   height: 700px;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .comment-top {
