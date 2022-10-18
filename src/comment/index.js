@@ -1,7 +1,6 @@
 import store from "./config-store";
 import { addComment } from "./comment";
 import { generate } from "shortid";
-import { Like } from "../assets/like";
 const commentForm = document.getElementById("comment-form");
 const commentInput = document.getElementById("comment-input");
 const commentBox = document.getElementById("comments_box");
@@ -11,15 +10,15 @@ commentForm.addEventListener("submit", (e) => {
   commentBox.scrollTop = 0;
 
   const comment = commentInput.value;
-  commentInput.value = "";
 
   store.dispatch(addComment({ comment, id: generate() }));
+
+  commentInput.value = "";
   renderComment();
-});//toggle activity bar
+}); //toggle activity bar
 
 function renderComment() {
   const { comments } = store.getState();
-
 
   const oneComment = comments[comments.length - 1];
 
@@ -40,9 +39,6 @@ function renderComment() {
         <span>2 Likes</span>
         <span>Reply</span>
       </div>
-    
-        
-      
     </div>
     <div class="comment-wrapper"></div>
 </div>`
